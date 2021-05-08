@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: antiquewhite;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #011f4b;
+}
+html {
+  font-size: 100%;
+}
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 85%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 75%;
+  }
+}
+.app {
+  width: 65%;
+  margin: 6rem auto;
+  color: antiquewhite;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  max-width: 1000px;
+}
+@media only screen and (max-width: 1200px) {
+  .app {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .app {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .app {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, min-content);
+    margin: 0 auto;
+  }
+}
+.navbar {
+  grid-column: 1 / -1;
+  background-color: #03396c;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .location {
+    padding-bottom: 1rem;
+  }
+}
+
+.logo {
+  margin: 1rem;
+}
+.card-wrapper {
+  height: min-content;
+  display: flex;
+  grid-column: 1 / -1;
+  background-color: #094680;
+}
+@media only screen and (max-width: 600px) {
+  .card-wrapper {
+    flex-direction: column;
+    padding-inline: 4rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .card-wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+.weather-card {
+  width: 50%;
+  background-color: #094680;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, min-content);
+  align-items: center;
+  justify-items: center;
+  padding: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .weather-card {
+    width: 100%;
+  }
+}
+.date {
+  grid-column: 1 / -1;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 1rem;
+  background-color: #03396c;
+  width: 100%;
+  text-align: center;
+}
+.temp {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  font-size: 4rem;
+  font-weight: 300;
+}
+.weather-icon {
+  height: 8em;
+  grid-column: 1 / 2;
+}
+.weather-info {
+  grid-row: 2 / 4;
+  grid-template-columns: 2 / 3;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.week-forecast {
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-around;
+  height: min-content;
+  background-color: #03396c;
+  padding: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .week-forecast {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+  }
+  .form {
+    margin-bottom: 1rem;
+  }
+}
+.mini-weather-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 20%;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .mini-weather-card {
+    width: 100%;
+  }
+}
+.mini-date {
+  text-transform: uppercase;
+  background-color: #094680;
+  width: 90%;
+}
+
+.mini-icon {
+  height: 3rem;
+}
+
+.clouds,
+.humidity,
+.sunrise,
+.sunset {
+  font-size: 1.2rem;
+}
+
+.info-icon {
+  height: 1.4rem;
+  vertical-align: bottom;
+  filter: invert();
+}
+.caption-main {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.form-btn {
+  color: black;
+}
+
+.form-input {
+  color: black;
+}
+.map-pin {
+  height: 1.6rem;
+  vertical-align: bottom;
+}
+.spinner {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.error-ui {
+  display: inline-block;
+  width: 100%;
+  font-size: 2rem;
+  height: 10rem;
+  background-color: aliceblue;
+  grid-column: 1/ -1;
+  grid-row: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-text {
+  color: red;
+  text-align: center;
+}
+.form-input {
+  outline: none;
+  height: 1.6rem;
+  padding: 0 0.5rem;
+  border: none;
+  border-radius: 3px;
+  border: 2px solid antiquewhite;
+  background-color: antiquewhite;
+}
+.form-input:focus {
+  border: 2px solid rgb(59, 209, 255);
+}
+.form-btn {
+  height: 1.6rem;
+  border: none;
+  border-radius: 3px;
+  margin-left: 2px;
+  padding: 0 0.2rem;
+  background-color: rgba(177, 14, 14, 0.774);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+.form-btn:hover {
+  cursor: pointer;
+  background-color: rgba(199, 37, 37, 0.774);
+}
+.form-btn:active {
+  transform: translateY(-1px);
+}
